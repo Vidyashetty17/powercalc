@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PowerCalc - Smart Electricity Bill Estimator</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="logo">
+    <svg width="24" height="24" fill="#18A974" viewBox="0 0 24 24">
+      <path d="M7 2L3 12H11L5 22L19 9H12L17 2H7Z" />
+    </svg>
+    <h1>PowerCalc</h1>
+    <p>Smart Electricity Bill Estimator</p>
+  </div>
+  <nav>
+    <button id="tab-calculator" class="active">Calculator</button>
+    <button id="tab-history">History</button>
+    <button id="tab-tips">Savings Tips</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Calculator Tab -->
+  <section id="calculator-section">
+    <div class="section-box">
+      <h2>Available Appliances</h2>
+      <p>Select appliances to add to your calculation</p>
+      <div class="appliance-grid" id="appliance-grid">
+        <!-- Appliances dynamically inserted here -->
+      </div>
+      <button id="btn-add-custom">+ Add Custom Appliance</button>
+    </div>
+
+    <div class="section-box" id="selected-appliances-section">
+      <h2>Your Appliances (<span id="count-selected">0</span>)</h2>
+      <p>Manage your selected appliances</p>
+      <div id="selected-appliances-list" class="selected-list">
+        <p class="empty-text">No appliances added yet<br />Select appliances above to get started</p>
+      </div>
+    </div>
+
+    <div class="section-box">
+      <h2>Electricity Rate</h2>
+      <label for="rate-kwh">Rate per kWh (₹)</label>
+      <input type="number" id="rate-kwh" value="7" min="0" step="0.1" />
+    </div>
+
+    <div class="section-box estimate-box">
+      <h2><span class="green">$</span> Monthly Bill Estimate</h2>
+      <p class="estimated-cost" id="estimated-cost">₹0.00</p>
+      <div class="usage-breakdown">
+        <div><span>⚡</span> Daily Usage<br /><strong id="daily-usage">0.00 kWh</strong></div>
+        <div><span>📈</span> Monthly Usage<br /><strong id="monthly-usage">0.00 kWh</strong></div>
+      </div>
+      <button id="btn-save">Save Calculation</button>
+    </div>
+  </section>
+
+  <!-- History Tab -->
+  <section id="history-section" class="hidden">
+    <h2>Calculation History</h2>
+    <div id="history-list">
+      <p class="empty-text">No past calculations found</p>
+    </div>
+  </section>
+
+  <!-- Savings Tips Tab -->
+  <section id="tips-section" class="hidden">
+    <h2>Energy Saving Tips</h2>
+    <div class="tip">
+      <h3>Use LED Bulbs</h3>
+      <p>Replace traditional bulbs with LED bulbs to reduce energy consumption by up to 75%.</p>
+      <p class="tip-save">Save up to 20-30%</p>
+    </div>
+
+    <div class="tip">
+      <h3>Optimize AC Temperature</h3>
+      <p>Set your AC to 24-26°C instead of lower temperatures to save significant energy.</p>
+      <p class="tip-save">Save up to 15-25%</p>
+    </div>
+
+    <div class="tip">
+      <h3>Use Energy Efficient Appliances</h3>
+      <p>Choose appliances with good energy ratings for long-term savings.</p>
+    </div>
+
+    <div class="tip">
+      <h3>Turn Off Unused Devices</h3>
+      <p>Switch off devices when not in use instead of leaving on standby mode.</p>
+    </div>
+  </section>
+</main>
+
+<!-- Custom Appliance Modal -->
+<div id="modal-custom-appliance" class="modal hidden">
+  <div class="modal-content">
+    <h3>Add Custom Appliance</h3>
+    <label for="custom-name">Name</label>
+    <input type="text" id="custom-name" placeholder="Appliance Name" />
+    <label for="custom-wattage">Wattage (W)</label>
+    <input type="number" id="custom-wattage" placeholder="Wattage" min="1" />
+    <button id="custom-add-btn">Add Appliance</button>
+    <button id="custom-cancel-btn" class="secondary">Cancel</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

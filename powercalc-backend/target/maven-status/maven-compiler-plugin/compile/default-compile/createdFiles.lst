@@ -1,0 +1,9 @@
+com\powercalc\PowerCalcApplication.class
+com\powercalc\TestController.class
+com\powercalc\model\CalculationHistoryEntry.class
+com\powercalc\controller\CalculationController.class
+com\powercalc\model\Appliance.class
+com\powercalc\service\CalculationService.class
+com\powercalc\controller\CalculationHistoryController.class
+com\powercalc\model\ApplianceUsage.class
+com\powercalc\model\CalculationEntry.class
