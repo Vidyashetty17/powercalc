@@ -4,7 +4,7 @@
     A web application  to estimate  electricity bills.
   </li>
   <li>
-    Based on the user input reagrding the number of appliances ,qunatity and watts consumed by each.
+    Based on the user input regarding the number of appliances ,quantity and watts consumed by each.
    </li>
 
   
