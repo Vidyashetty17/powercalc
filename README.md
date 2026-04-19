@@ -1,2 +1,3 @@
 # powercalc
-A web application  to estimate  electricity bills based on the number of watts consumed by each appliances
+A web application  to estimate  electricity bills.
+Based on the user input reagrding the number of appliances ,qunatity and watts consumed by each.
